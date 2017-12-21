@@ -1,0 +1,22 @@
+﻿<Window x:Class="userCreator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:userCreator"
+        mc:Ignorable="d"
+        Title="Firelight AD User Creator" Height="362.963" Width="523.531" ResizeMode="CanMinimize" SizeToContent="WidthAndHeight">
+    <Grid>
+        <Grid Margin="10,10,9,19">
+            <CheckBox x:Name="IsInternal" Content="Internal?" HorizontalAlignment="Left" Margin="0,87,0,0" VerticalAlignment="Top"/>
+            <Button Content="Process" HorizontalAlignment="Left" Margin="173,84,0,0" VerticalAlignment="Top" Width="75"/>
+            <TextBox x:Name="UserFirstName" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="First Name" VerticalAlignment="Top" Width="190"/>
+            <TextBox x:Name="UserEmailAddress" HorizontalAlignment="Left" Height="23" Margin="0,56,0,0" TextWrapping="Wrap" Text="Email Address" VerticalAlignment="Top" Width="248"/>
+            <TextBox x:Name="UserLastName" HorizontalAlignment="Left" Height="23" Margin="0,28,0,0" TextWrapping="Wrap" Text="Last Name" VerticalAlignment="Top" Width="248"/>
+            <TextBox x:Name="userMiddleInitial" HorizontalAlignment="Left" Height="23" Margin="195,0,0,0" TextWrapping="Wrap" Text="M.I" VerticalAlignment="Top" Width="53"/>
+            <TextBlock x:Name="log" HorizontalAlignment="Left" Margin="0,107,0,0" TextWrapping="Wrap" Text="stdout" VerticalAlignment="Top" IsEnabled="False" Height="196" Width="497"/>
+
+        </Grid>
+
+    </Grid>
+</Window>
