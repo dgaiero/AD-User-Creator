@@ -43,7 +43,8 @@ function Get-UserVariables {
   $script:UserMiddleInitial = Read-Host -Prompt 'Input User Middle Initial'
   $script:UserLastName = Read-Host -Prompt 'Input User last Name'
   $script:UserEmailAddress = Read-Host -Prompt 'Input User Email Address'
-  $script:isInternalSwitch = Read-Host -Prompt 'Is User Internal? (y)es or (n)o'
+  $script:isInternalSwitch = Read-Host -Prompt "Is User Internal?`n[Y] Yes or [N] No"
+  $script:isInternalSwitch = $isInternalSwitch.ToLower()
 
 
 
@@ -106,7 +107,7 @@ function Write-UserDirectory {
   $script:UserGUID = Get-ADUser $SamAccountName | Select-Object -ExpandProperty ObjectGUID
   $script:UserSID = Get-ADUser $SamAccountName | Select-Object SID
 
-  $script:UserFileDirectory = "$networkShare$UserGUID"
+  $script:UserFileDirectory = "$networkShare$SamAccountName"
 
 
   New-Item -ItemType directory -Path $UserFileDirectory
@@ -127,7 +128,8 @@ function Write-UserPassword {
   $SecPaswd = ConvertTo-SecureString -String $UserPassword -AsPlainText -Force
   Set-ADAccountPassword -Reset -NewPassword $SecPaswd -Identity:$Identity
   Unlock-ADAccount -Identity:$Identity
-  Set-ADUser -Identity:$Identity -ChangePasswordAtLogon $true
+  Set-ADUser -Identity:$Identity -ChangePasswordAtLogon $false
+  
 
   Set-ADObject -Identity:$Identity -Replace:@{ "userAccountControl" = "8389120" } -Server:$Server
 }
