@@ -62,13 +62,13 @@ function Get-UserVariables {
   $script:Path = "CN=Users,DC=ad,DC=fire-light,DC=us"
   $script:Identity = "CN=$DisplayNameEscaped,$Path"
 
-  if (($isInternalSwitch = 'yes') -or ($isInternalSwitch = 'y')) {
+  if ($isInternalSwitch -eq 'yes' -or $isInternalSwitch -eq 'y') {
     $isInternal = $true
-  } else {
+  } Else {
     $isInternal = $false
   }
 
-  if ($isInternal = $true) {
+  if ($isInternal -eq $true) {
     $script:networkShare = "\\winserver1\GUsers\"
     $script:PrimaryCN = "internal"
   } else {
