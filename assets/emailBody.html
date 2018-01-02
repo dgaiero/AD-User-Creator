@@ -1,45 +1,52 @@
 <p>Dear $UserFirstName,</p>
-<p>An account has been made for you on&nbsp;<strong>winserver1</strong> on AD network&nbsp;<strong>ad.fire-light.us</strong>. To finish setup of your account, please visit&nbsp;<a href='https://uac.fire-light.us'>https://uac.fire-light.us</a>&nbsp;to set your password. To use this site, you must login with your username and domain (AD\$SamAccountName). Once you login, click reset password, and type your current password, given below and the new password of your choice.</p>
+<p>An account has been made for you on&nbsp;<strong>winserver1</strong> on AD network&nbsp;<strong>ad.fire-light.us</strong>. To finish setup of your account, please visit&nbsp;<a href='https://uac.fire-light.us'>https://uac.fire-light.us</a>&nbsp;to set
+  your password. To use this site, login with your username and domain (AD\$SamAccountName) where it says <pre>someone@example.com</pre>. Your password is given below. Once you login, click reset password, and type your current password, given below and the new password of your choice.</p>
+
+For more information about initial account setup, please visit: <a href="https://docs.fire-light.us/Accounts/Initial%20Setup">https://docs.fire-light.us/Accounts/Initial%20Setup</a>
+
 <p>Your initial credentials are:</p>
 
 <style>
-table {
-border-collapse: collapse;
-float: left;
-}
+  table {
+    border-collapse: collapse;
+    float: left;
+  }
 
-table, th, td {
- border: 1px solid black;
- border-collapse: collapse;
- padding: 5px;
-}
+  table,
+  th,
+  td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 5px;
+  }
 
-.header {
-background-color: #ccc;
+  .header {
+    background-color: #ccc;
 </style>
 
 <table>
-<tbody>
-<tr class='header'>
-<td><strong>Domain</strong></td>
-<td><strong>Username</strong></td>
-<td><strong>Password</strong></td>
-</tr>
-<tr>
-<td><pre>AD</pre></td>
-<td>
-<pre>$SamAccountName</pre>
-</td>
-<td>
-<pre>$UserPassword</pre>
-</td>
-</tr>
-</tbody>
+  <tbody>
+    <tr class='header'>
+      <td><strong>Domain</strong></td>
+      <td><strong>Username</strong></td>
+      <td><strong>Password</strong></td>
+    </tr>
+    <tr>
+      <td><pre>AD</pre></td>
+      <td>
+        <pre>$SamAccountName</pre>
+      </td>
+      <td>
+        <pre>$UserPassword</pre>
+      </td>
+    </tr>
+  </tbody>
 </table>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
-<p>Your user folder is available through the UNC path: <strong>$UserFileDirectory</strong>. You can access this folder directly on any intranet connected computer. If you are on the external network, you will need to use RDP and the gateway server. For more information visit <a href='https://connectinfo.fire-light.us/RDPSetup'><b>(Coming Soon) </b>https://info.connect1.fire-light.us/RDPSetup</a>. Your user folder name can be identified by your account ID:&nbsp;<strong>$SamAccountName</strong>.</p>
+<p>Your user folder is available through the UNC path: <strong>$UserFileDirectory</strong>. You can access this folder directly on any intranet connected computer. If you are on the external network, you will need to use RDP and the gateway server. For more
+  information visit <a href='https://docs.fire-light.us'>https://docs.fire-light.us</a>. Your user folder name can be identified by your account ID:&nbsp;<strong>$SamAccountName</strong>.</p>
 <p>&nbsp;</p>
 <p>Thank you,</p>
 <p>AD</p>
